@@ -1,4 +1,3 @@
-````markdown
 # URL Shortener Application
 
 ## Overview
@@ -33,6 +32,7 @@ This application is a URL Shortener service that allows users to create and mana
    cd backend
    npm install
    ```
+
 ````
 
 3. **Configure MongoDB**:
@@ -240,3 +240,4 @@ Happy coding and enjoy using the URL Shortener!
 ```
 
 ```
+````

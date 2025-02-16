@@ -4,8 +4,10 @@ import { APP_GUARD } from '@nestjs/core'
 import { MongooseModule } from '@nestjs/mongoose'
 import { ThrottlerGuard, ThrottlerModule } from '@nestjs/throttler'
 import { MongoMemoryServer } from 'mongodb-memory-server'
+import { AuthModule } from './auth/auth.module'
 import { HealthModule } from './health/health.module'
 import { UrlModule } from './url/url.module'
+import { UserModule } from './user/user.module'
 
 @Module({
   imports: [
@@ -30,6 +32,8 @@ import { UrlModule } from './url/url.module'
     HealthModule,
 
     UrlModule,
+    UserModule,
+    AuthModule,
   ],
   providers: [
     {

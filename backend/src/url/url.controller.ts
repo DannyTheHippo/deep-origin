@@ -17,13 +17,13 @@ import { UpdateUrlDto } from './dto/update-url.dto'
 import { UrlDocument } from './url.schema'
 import { UrlService } from './url.service'
 
-@Controller('urls')
+@Controller()
 export class UrlController {
   constructor(private readonly urlService: UrlService) {}
 
   @Post('urls')
   async createUrl(@Body() createUrlDto: CreateUrlDto, @Req() req: Request) {
-    const userId = (req.user as any).userId
+    const userId = req.user ? (req.user as any).userId : null
     const url = await this.urlService.create(createUrlDto, userId)
 
     return {

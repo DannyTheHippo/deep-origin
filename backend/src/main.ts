@@ -1,11 +1,13 @@
 import { ValidationPipe } from '@nestjs/common'
 import { NestFactory } from '@nestjs/core'
 import { AppModule } from './app.module'
+import { MongooseExceptionFilter } from './filters/mongoose-exception.filter'
 
 const bootstrap = async () => {
   const app = await NestFactory.create(AppModule)
 
   app.useGlobalPipes(new ValidationPipe())
+  app.useGlobalFilters(new MongooseExceptionFilter())
 
   await app.listen(3000)
 }

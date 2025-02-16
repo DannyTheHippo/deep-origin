@@ -6,11 +6,11 @@ export type UrlDocument = Url & Document
 
 @Schema({ timestamps: true })
 export class Url {
-  @Prop({ required: true, unique: true })
-  slug: string
-
   @Prop({ required: true })
   originalUrl: string
+
+  @Prop({ unique: true })
+  slug: string
 
   @Prop({ default: 0 })
   visits: number

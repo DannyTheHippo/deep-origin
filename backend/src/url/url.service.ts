@@ -16,7 +16,7 @@ export class UrlService {
   constructor(@InjectModel(Url.name) private urlModel: Model<UrlDocument>) {}
 
   async create(createUrlDto: CreateUrlDto, userId?: string): Promise<Url> {
-    let slug = createUrlDto.slug
+    let slug = createUrlDto.slug ?? ''
 
     if (slug) {
       const exists = await this.urlModel.findOne({ slug })
@@ -26,9 +26,9 @@ export class UrlService {
       let isUnique = false
 
       while (!isUnique) {
-        const exists = await this.urlModel.findOne({
-          slug: randomBytes(3).toString('hex'),
-        })
+        slug = randomBytes(3).toString('hex')
+
+        const exists = await this.urlModel.findOne({ slug })
 
         if (!exists) isUnique = true
       }

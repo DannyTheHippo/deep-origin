@@ -1,0 +1,27 @@
+{
+  "autorun": false,
+  "autokill": true,
+  "terminals": [
+    {
+      "name": "FE - DeepOrigin",
+      "command": "cd frontend && npm run start:dev",
+      "icon": "code",
+      "color": "terminal.ansiGreen",
+      "recycle": true,
+      "execute": true,
+      "focus": false,
+      "open": true
+    },
+    {
+      "name": "BE - DeepOrigin",
+      "command": "cd backend && npm run start:dev",
+      "icon": "database",
+      "split": "FE - DeepOrigin",
+      "color": "terminal.ansiBlue",
+      "recycle": true,
+      "execute": true,
+      "focus": false,
+      "open": true
+    }
+  ]
+}

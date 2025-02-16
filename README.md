@@ -33,8 +33,6 @@ This application is a URL Shortener service that allows users to create and mana
    npm install
    ```
 
-````
-
 3. **Configure MongoDB**:
 
    - Ensure MongoDB is running locally.
@@ -236,8 +234,3 @@ This application is a URL Shortener service that allows users to create and mana
 - **Security**: Sensitive information (like JWT secrets) should be managed using environment variables in production environments.
 
 Happy coding and enjoy using the URL Shortener!
-
-```
-
-```
-````

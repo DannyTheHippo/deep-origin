@@ -8,3 +8,6 @@ dist/
 # Logs and misc
 *.log
 .DS_Store
+
+# Homework task
+Senior_Backend_Take-Home_Project_2.0.pdf

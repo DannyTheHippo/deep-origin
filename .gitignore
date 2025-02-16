@@ -9,5 +9,11 @@ dist/
 *.log
 .DS_Store
 
+# NestJS generated files
+.next/
+
+# Typings
+*.d.ts
+
 # Homework task
 Senior_Backend_Take-Home_Project_2.0.pdf

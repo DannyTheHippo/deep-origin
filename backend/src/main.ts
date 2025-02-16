@@ -6,6 +6,8 @@ import { MongooseExceptionFilter } from './filters/mongoose-exception.filter'
 const bootstrap = async () => {
   const app = await NestFactory.create(AppModule)
 
+  app.enableCors({ origin: 'http://localhost:3001' })
+
   app.useGlobalPipes(new ValidationPipe())
   app.useGlobalFilters(new MongooseExceptionFilter())
 

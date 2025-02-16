@@ -4,6 +4,7 @@ import { APP_GUARD } from '@nestjs/core'
 import { MongooseModule } from '@nestjs/mongoose'
 import { ThrottlerGuard, ThrottlerModule } from '@nestjs/throttler'
 import { MongoMemoryServer } from 'mongodb-memory-server'
+import { HealthModule } from './health/health.module'
 import { UrlModule } from './url/url.module'
 
 @Module({
@@ -25,6 +26,8 @@ import { UrlModule } from './url/url.module'
         return { uri: process.env.MONGODB_URI }
       },
     }),
+
+    HealthModule,
 
     UrlModule,
   ],
